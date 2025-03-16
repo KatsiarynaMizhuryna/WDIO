@@ -25,6 +25,14 @@ describe("Test suite", () => {
 
         const errorMessage = await loginPage.getErrorMessage();
         expect(errorMessage).toContain('Epic sadface: Password is required');
+    });  
+    
+    it("should show an error message with invalid credentials", async () => {
+        await loginPage.login("wronguser", "wrongpassword"); 
+        await loginPage.clickLoginButton();
+
+        const errorMessage = await loginPage.getErrorMessage();
+        expect(errorMessage).toContain("Epic sadface: Username and password do not match any user in this service"); 
     });
 
     it('Test Login form with valid Username & Password', async () => {
@@ -33,23 +41,5 @@ describe("Test suite", () => {
 
         const pageTitle = await browser.getTitle();
         expect(pageTitle).toEqual('Swag Labs');
-    });
-    // it("should show an error message with invalid credentials", async () => {
-    //     await loginPage.login("wronguser", "wrongpassword"); 
-    //     await loginPage.clickLoginButton();
-
-    //     const errorMessage = await loginPage.getErrorMessage();
-    //     expect(errorMessage).toContain("Invalid credentials"); 
-    // });
-
-    // it("should clear input fields before entering new data", async () => {
-    //     await loginPage.login("testuser", "password123");
-    //     await loginPage.clearInputs();
-    //     await loginPage.login("newuser", "newpassword");
-    //     await loginPage.clickLoginButton();
-
-    //     const welcomeMessage = await $("#welcome-message"); 
-    //     await expect(welcomeMessage).toBeDisplayed();
-    // });
-
+    });    
 });

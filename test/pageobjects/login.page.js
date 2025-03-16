@@ -22,6 +22,11 @@ class LoginPage extends Page {
         await this.inputUsername.setValue(username);
         await this.inputPassword.setValue(password);
     }    
+    
+    async resetLoginForm() {
+        await this.inputUsername.setValue('');
+        await this.inputPassword.setValue('');
+    }
 
     async clickLoginButton() {
         await this.loginButton.click();

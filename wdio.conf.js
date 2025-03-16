@@ -9,12 +9,10 @@ export const config = {
 
     maxInstances: 10,
 
-    capabilities: [
-        {
-            browserName: browserName,
-            'wdio:devtoolsOptions': {}, 
-        }
-    ],
+    capabilities: [{
+        browserName: browserName
+    }],
+
 
     baseUrl: 'https://www.saucedemo.com/',
 
@@ -39,10 +37,6 @@ export const config = {
         ui: 'bdd',
         timeout: 60000
     },
-
-    before: async function () {
-        await browser.url('https://www.saucedemo.com/');
-    }
 };
 
 export default config;
