@@ -1,0 +1,32 @@
+{
+  "name": "wdio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:chrome": "wdio run wdio.conf.js chrome",
+    "test:firefox": "wdio run wdio.conf.js firefox",
+    "test:safari": "wdio run wdio.conf.js safari",
+    "wdio": "wdio run wdio.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KatsiarynaMizhuryna/WDIO.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/KatsiarynaMizhuryna/WDIO/issues"
+  },
+  "homepage": "https://github.com/KatsiarynaMizhuryna/WDIO#readme",
+  "devDependencies": {
+    "@wdio/cli": "^9.12.0",
+    "@wdio/json-reporter": "^9.11.0",
+    "@wdio/local-runner": "^9.12.0",
+    "@wdio/mocha-framework": "^9.11.0",
+    "@wdio/spec-reporter": "^9.11.0",
+    "@wdio/visual-service": "^6.3.3"
+  }
+}
